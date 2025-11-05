@@ -30,34 +30,37 @@
         
         <!-- 
           Пункт 11: Форма для отправки личных контактных данных
-          Отправляется на тестовый сервер httpbin.org
+          ОБНОВЛЕНО: Теперь отправляется в Google Forms.
+          
+          ВАЖНО: Тебе нужно заменить 'YOUR_FORM_ACTION_LINK_HERE' 
+          и все 'entry.XXXXXX' на твои собственные из Google Form (см. инструкцию).
         -->
         <section class="form-section">
             <h3>Форма 1: Ваши контактные данные (Пункт 11)</h3>
-            <form action="https://httpbin.org/post" method="POST" target="_blank">
+            <form action="YOUR_FORM_ACTION_LINK_HERE" method="POST" target="_blank">
                 <div>
                     <label for="familiya">Фамилия:</label>
-                    <input type="text" id="familiya" name="familiya" required>
+                    <input type="text" id="familiya" name="entry.1000001" required> <!-- ЗАМЕНИТЬ entry.1000001 -->
                 </div>
                 <div>
                     <label for="imya">Имя:</label>
-                    <input type="text" id="imya" name="imya" required>
+                    <input type="text" id="imya" name="entry.1000002" required> <!-- ЗАМЕНИТЬ entry.1000002 -->
                 </div>
                 <div>
                     <label for="group">Группа:</label>
-                    <input type="text" id="group" name="group">
+                    <input type="text" id="group" name="entry.1000003"> <!-- ЗАМЕНИТЬ entry.1000003 -->
                 </div>
                 <div>
                     <label for="phone">Мобильный телефон:</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="entry.1000004"> <!-- ЗАМЕНИТЬ entry.1000004 -->
                 </div>
                 <div>
                     <label for="email">Электронка:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="entry.1000005" required> <!-- ЗАМЕНИТЬ entry.1000005 -->
                 </div>
                 <div>
                     <label for="send_date">Дата отправки:</label>
-                    <input type="date" id="send_date" name="send_date" required>
+                    <input type="date" id="send_date" name="entry.1000006" required> <!-- ЗАМЕНИТЬ entry.1000006 -->
                 </div>
                 <button type="submit">Отправить контактные данные</button>
             </form>
@@ -65,52 +68,61 @@
 
         <!-- 
           Пункт 12: Оригинальная форма (Заказ)
-          Со всеми типами полей
+          ОБНОВЛЕНО: Теперь отправляется во ВТОРУЮ Google Form.
         -->
         <section class="form-section">
             <h3>Форма 2: Детали заказа (Пункт 12)</h3>
-            <form action="https://httpbin.org/post" method="POST" target="_blank">
+            <form action="YOUR_SECOND_FORM_ACTION_LINK_HERE" method="POST" target="_blank">
                 
                 <!-- hidden (скрытое поле) -->
-                <input type="hidden" name="form_id" value="order-boots-v2">
+                <input type="hidden" name="entry.2000001" value="order-boots-v2"> <!-- ЗАМЕНИТЬ entry.2000001 -->
                 
                 <!-- text -->
                 <div>
                     <label for="full_name">Полное имя (на карте):</label>
-                    <input type="text" id="full_name" name="full_name">
+                    <input type="text" id="full_name" name="entry.2000002"> <!-- ЗАМЕНИТЬ entry.2000002 -->
                 </div>
                 
                 <!-- number (со значением по-умолчанию) -->
                 <div>
                     <label for="size">Размер (EU):</label>
-                    <input type="number" id="size" name="size" value="42" min="36" max="48">
+                    <input type="number" id="size" name="entry.2000003" value="42" min="36" max="48"> <!-- ЗАМЕНИТЬ entry.2000003 -->
                 </div>
                 
                 <!-- radio (со значением по-умолчанию) -->
                 <div class="radio-group">
                     <label>Тип подошвы:</label>
-                    <label><input type="radio" name="sole_type" value="FG" checked> Firm Ground (Трава)</label>
-                    <label><input type="radio" name="sole_type" value="AG"> Artificial Grass (Искусств.)</label>
-                    <label><input type="radio" name="sole_type" value="SG"> Soft Ground (Грязь)</label>
+                    <!-- 
+                      ВАЖНО: Для Radio 'name' должен быть ОДИНАКОВЫМ для всей группы.
+                    -->
+                    <label><input type="radio" name="entry.2000004" value="FG" checked> Firm Ground (Трава)</label> <!-- ЗАМЕНИТЬ entry.2000004 -->
+                    <label><input type="radio" name="entry.2000004" value="AG"> Artificial Grass (Искусств.)</label>
+                    <label><input type="radio" name="entry.2000004" value="SG"> Soft Ground (Грязь)</label>
                 </div>
                 
                 <!-- checkbox -->
                 <div class="checkbox-group">
                     <label>Дополнительно:</label>
-                    <label><input type="checkbox" name="extra_laces" value="yes"> Запасные шнурки</label>
-                    <label><input type="checkbox" name="extra_bag" value="yes"> Сумка для бутс</label>
+                    <!-- 
+                      ВАЖНО: Для Checkbox 'name' должны быть РАЗНЫМИ, 
+                      если в Google Form это два разных вопроса. 
+                      Или ОДИНАКОВЫМ, если это один вопрос типа "Флажки".
+                      (Проверь по своей инструкции!)
+                    -->
+                    <label><input type="checkbox" name="entry.2000005" value="yes"> Запасные шнурки</label> <!-- ЗАМЕНИТЬ entry.2000005 -->
+                    <label><input type="checkbox" name="entry.2000006" value="yes"> Сумка для бутс</label> <!-- ЗАМЕНИТЬ entry.2000006 -->
                 </div>
                 
                 <!-- date -->
                 <div>
                     <label for="delivery_date">Желаемая дата доставки:</label>
-                    <input type="date" id="delivery_date" name="delivery_date">
+                    <input type="date" id="delivery_date" name="entry.2000007"> <!-- ЗАМЕНИТЬ entry.2000007 -->
                 </div>
                 
                 <!-- password -->
                 <div>
                     <label for="promo_code">Промо-код:</label>
-                    <input type="password" id="promo_code" name="promo_code">
+                    <input type="password" id="promo_code" name="entry.2000008"> <!-- ЗАМЕНИТЬ entry.2000008 -->
                 </div>
                 
                 <button type="submit">Оформить заказ</button>
