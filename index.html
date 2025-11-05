@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Store - Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>FOOTBALL STORE</h1>
+        <p>Магазин лучших футбольных бутс</p>
+    </header>
+
+    <!-- 
+      НАВИГАЦИЯ (Пункты 1, 3, 4, 5)
+      - Пункт 1: Текстовые ссылки ("Главная", "Продукция"...)
+      - Пункт 1: Графическая ссылка (Логотип "⚽")
+      - Пункт 4: Ссылка на начальную страницу ("Главная")
+      - Пункт 5: "class=active" стоит на "Главная"
+    -->
+    <nav>
+        <a href="index.html" class="logo-link">⚽</a>
+        <a href="index.html" class="active">Главная</a>
+        <a href="products.html">Продукция (Списки)</a>
+        <a href="comparison.html">Сравнение (Таблица)</a>
+        <a href="order.html">Заказ (Формы)</a>
+        <!-- Пункт 3: Внешняя ссылка в новом окне -->
+        <a href="https://www.adidas.com" target="_blank" class="external-link">Adidas.com</a>
+    </nav>
+
+    <main>
+        <h2>Добро пожаловать в наш магазин!</h2>
+        <p>Мы предлагаем лучший выбор профессиональных футбольных бутс от ведущих мировых брендов. Найдите свою идеальную пару и доминируйте на поле!</p>
+        
+        <!-- Пункт 2: Ссылка на закладку (внутренний фрагмент) -->
+        <p style="text-align: center; font-size: 1.2rem;">
+            <a href="#featured" style="color: #004d00; font-weight: bold;">➡️ Посмотреть рекомендуемые модели ⬅️</a>
+        </p>
+        
+        <!-- Пункт 8: Изображение с пояснением -->
+        <figure>
+            <img src="https://placehold.co/1000x400/004d00/ffffff?text=Football+Boots+Banner&font=arial" alt="Баннер с футбольными бутсами">
+            <figcaption>Наши бутсы - ваш лучший выбор для любого покрытия.</figcaption>
+        </figure>
+
+        <h3 id="featured">Рекомендуемые модели</h3>
+        <p>Наши эксперты выбрали лучшие модели этого сезона. Ознакомьтесь с ними на странице "Продукция" или в таблице "Сравнение".</p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Football Store. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

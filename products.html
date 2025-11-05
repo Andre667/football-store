@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Store - Продукция</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top"> <!-- Якорь для "Наверх" -->
+
+    <header>
+        <h1>FOOTBALL STORE</h1>
+    </header>
+
+    <!-- 
+      НАВИГАЦИЯ
+      - "class=active" теперь стоит на "Продукция"
+    -->
+    <nav>
+        <a href="index.html" class="logo-link">⚽</a>
+        <a href="index.html">Главная</a>
+        <a href="products.html" class="active">Продукция (Списки)</a>
+        <a href="comparison.html">Сравнение (Таблица)</a>
+        <a href="order.html">Заказ (Формы)</a>
+        <a href="https://www.adidas.com" target="_blank" class="external-link">Adidas.com</a>
+    </nav>
+
+    <main>
+        <h2>Каталог продукции</h2>
+        
+        <!-- Пункт 6: Навигация внутри страницы (закладки) -->
+        <div class="page-nav">
+            <a href="#nike">Перейти к Nike</a> | 
+            <a href="#adidas">Перейти к Adidas</a>
+        </div>
+
+        <div class="product-list">
+            <!-- 
+              Пункт 7: Списки (нумерованные, не нумерованные, вложенные)
+            -->
+            <h3 id="nike">Nike</h3>
+            <!-- Пункт 7: Не нумерованный список -->
+            <ul>
+                <li>Nike Mercurial Superfly</li>
+                <li>Nike Phantom GX</li>
+                <li>
+                    Nike Tiempo Legend
+                    <!-- Пункт 7: Вложенный не нумерованный список -->
+                    <ul>
+                        <li>Для натуральной травы (FG)</li>
+                        <li>Для искусственной травы (AG)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 id="adidas" style="margin-top: 30px;">Adidas</h3>
+            <!-- Пункт 7: Нумерованный список -->
+            <ol>
+                <li>Adidas Predator Elite</li>
+                <li>Adidas Copa Mundial</li>
+                <li>
+                    Adidas X Crazyfast
+                    <!-- Пункт 7: Вложенный нумерованный список -->
+                    <ol type="a">
+                        <li>Версия со шнурками</li>
+                        <li>Версия без шнурков</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Пункт 6: Ссылка "к началу" -->
+        <a href="#top" style="display: block; text-align: center; margin-top: 30px; font-weight: bold;">Наверх ▲</a>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Football Store. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

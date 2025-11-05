@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Store - Сравнение</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>FOOTBALL STORE</h1>
+    </header>
+
+    <!-- 
+      НАВИГАЦИЯ
+      - "class=active" теперь стоит на "Сравнение"
+    -->
+    <nav>
+        <a href="index.html" class="logo-link">⚽</a>
+        <a href="index.html">Главная</a>
+        <a href="products.html">Продукция (Списки)</a>
+        <a href="comparison.html" class="active">Сравнение (Таблица)</a>
+        <a href="order.html">Заказ (Формы)</a>
+        <a href="https://www.adidas.com" target="_blank" class="external-link">Adidas.com</a>
+    </nav>
+
+    <main>
+        <h2>Сравнительная таблица моделей</h2>
+        
+        <!-- 
+          Пункт 10: Таблица
+          - Изображение на заднем фоне (через style.css)
+        -->
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Модель</th>
+                    <!-- Пункт 10: Изображение в ячейке -->
+                    <th>Логотип</th>
+                    <!-- Пункт 9: Миниатюрная графическая гиперссылка -->
+                    <th>Вид (Нажми для увеличения)</th>
+                    <th>Особенности</th>
+                    <!-- Пункт 10: Гиперссылки -->
+                    <th>Ссылка</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Adidas Predator Elite</td>
+                    <td><img class="cell-image" src="https://placehold.co/100x100/000000/ffffff?text=Adidas" alt="Adidas"></td>
+                    <td>
+                        <!-- Пункт 9: Миниатюра (100px) -->
+                        <a 
+                            href="https://placehold.co/600x400/000000/ffffff?text=Predator+(Big)" 
+                            target="_blank" 
+                            class="thumbnail"
+                        >
+                            <img src="https://placehold.co/100x67/000000/ffffff?text=Predator" alt="Predator Thumbnail">
+                        </a>
+                    </td>
+                    <td>Контроль, точность, резиновые шипы</td>
+                    <td><a href="order.html" class="buy-link">Заказать</a></td>
+                </tr>
+                <tr>
+                    <td>Nike Mercurial Superfly</td>
+                    <td><img class="cell-image" src="https://placehold.co/100x100/ff6600/ffffff?text=Nike" alt="Nike"></td>
+                    <td>
+                        <!-- Пункт 9: Миниатюра (100px) -->
+                        <a 
+                            href="https://placehold.co/600x400/ff6600/ffffff?text=Mercurial+(Big)" 
+                            target="_blank" 
+                            class="thumbnail"
+                        >
+                            <img src="https://placehold.co/100x67/ff6600/ffffff?text=Mercurial" alt="Mercurial Thumbnail">
+                        </a>
+                    </td>
+                    <td>Скорость, легкий вес, фиксация голеностопа</td>
+                    <td><a href="order.html" class="buy-link">Заказать</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Football Store. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

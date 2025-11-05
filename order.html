@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Store - Заказ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>FOOTBALL STORE</h1>
+    </header>
+
+    <!-- 
+      НАВИГАЦИЯ
+      - "class=active" теперь стоит на "Заказ"
+    -->
+    <nav>
+        <a href="index.html" class="logo-link">⚽</a>
+        <a href="index.html">Главная</a>
+        <a href="products.html">Продукция (Списки)</a>
+        <a href="comparison.html">Сравнение (Таблица)</a>
+        <a href="order.html" class="active">Заказ (Формы)</a>
+        <a href="https://www.adidas.com" target="_blank" class="external-link">Adidas.com</a>
+    </nav>
+
+    <main>
+        <h2>Оформление заказа</h2>
+        
+        <!-- 
+          Пункт 11: Форма для отправки личных контактных данных
+          Отправляется на тестовый сервер httpbin.org
+        -->
+        <section class="form-section">
+            <h3>Форма 1: Ваши контактные данные (Пункт 11)</h3>
+            <form action="https://httpbin.org/post" method="POST" target="_blank">
+                <div>
+                    <label for="familiya">Фамилия:</label>
+                    <input type="text" id="familiya" name="familiya" required>
+                </div>
+                <div>
+                    <label for="imya">Имя:</label>
+                    <input type="text" id="imya" name="imya" required>
+                </div>
+                <div>
+                    <label for="group">Группа:</label>
+                    <input type="text" id="group" name="group">
+                </div>
+                <div>
+                    <label for="phone">Мобильный телефон:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div>
+                    <label for="email">Электронка:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="send_date">Дата отправки:</label>
+                    <input type="date" id="send_date" name="send_date" required>
+                </div>
+                <button type="submit">Отправить контактные данные</button>
+            </form>
+        </section>
+
+        <!-- 
+          Пункт 12: Оригинальная форма (Заказ)
+          Со всеми типами полей
+        -->
+        <section class="form-section">
+            <h3>Форма 2: Детали заказа (Пункт 12)</h3>
+            <form action="https://httpbin.org/post" method="POST" target="_blank">
+                
+                <!-- hidden (скрытое поле) -->
+                <input type="hidden" name="form_id" value="order-boots-v2">
+                
+                <!-- text -->
+                <div>
+                    <label for="full_name">Полное имя (на карте):</label>
+                    <input type="text" id="full_name" name="full_name">
+                </div>
+                
+                <!-- number (со значением по-умолчанию) -->
+                <div>
+                    <label for="size">Размер (EU):</label>
+                    <input type="number" id="size" name="size" value="42" min="36" max="48">
+                </div>
+                
+                <!-- radio (со значением по-умолчанию) -->
+                <div class="radio-group">
+                    <label>Тип подошвы:</label>
+                    <label><input type="radio" name="sole_type" value="FG" checked> Firm Ground (Трава)</label>
+                    <label><input type="radio" name="sole_type" value="AG"> Artificial Grass (Искусств.)</label>
+                    <label><input type="radio" name="sole_type" value="SG"> Soft Ground (Грязь)</label>
+                </div>
+                
+                <!-- checkbox -->
+                <div class="checkbox-group">
+                    <label>Дополнительно:</label>
+                    <label><input type="checkbox" name="extra_laces" value="yes"> Запасные шнурки</label>
+                    <label><input type="checkbox" name="extra_bag" value="yes"> Сумка для бутс</label>
+                </div>
+                
+                <!-- date -->
+                <div>
+                    <label for="delivery_date">Желаемая дата доставки:</label>
+                    <input type="date" id="delivery_date" name="delivery_date">
+                </div>
+                
+                <!-- password -->
+                <div>
+                    <label for="promo_code">Промо-код:</label>
+                    <input type="password" id="promo_code" name="promo_code">
+                </div>
+                
+                <button type="submit">Оформить заказ</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Football Store. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
