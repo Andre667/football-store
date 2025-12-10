@@ -3,80 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Store - Продукция</title>
+    <title>Football Store - Каталог</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="top"> <!-- Якорь для "Наверх" -->
+<body>
 
-    <header>
-        <h1>FOOTBALL STORE</h1>
-    </header>
-
-    <!-- 
-      НАВИГАЦИЯ
-      - "class=active" теперь стоит на "Продукция"
-    -->
-    <nav>
-        <a href="index.html" class="logo-link">⚽</a>
-        <a href="index.html">Главная</a>
-        <a href="products.html" class="active">Продукция (Списки)</a>
-        <a href="comparison.html">Сравнение (Таблица)</a>
-        <a href="order.html">Заказ (Формы)</a>
-        <a href="https://www.adidas.com" target="_blank" class="external-link">Adidas.com</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">⚽ Football Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <!-- Active class -->
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Каталог (JS)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Сравнение</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Заказ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.adidas.com" target="_blank">Adidas.com</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <h2>Каталог продукции</h2>
+    <main class="container mt-4">
+        <h2 class="text-center mb-4">Наши товары (Генерация JS)</h2>
         
-        <!-- Пункт 6: Навигация внутри страницы (закладки) -->
-        <div class="page-nav">
-            <a href="#nike">Перейти к Nike</a> | 
-            <a href="#adidas">Перейти к Adidas</a>
+        <!-- Навигация внутри страницы (Пункт 3) -->
+        <div class="text-center mb-4">
+            <a href="#footer-anchor" class="btn btn-outline-secondary btn-sm">Вниз страницы</a>
         </div>
 
-        <div class="product-list">
-            <!-- 
-              Пункт 7: Списки (нумерованные, не нумерованные, вложенные)
-            -->
-            <h3 id="nike">Nike</h3>
-            <!-- Пункт 7: Не нумерованный список -->
-            <ul>
-                <li>Nike Mercurial Superfly</li>
-                <li>Nike Phantom GX</li>
-                <li>
-                    Nike Tiempo Legend
-                    <!-- Пункт 7: Вложенный не нумерованный список -->
-                    <ul>
-                        <li>Для натуральной травы (FG)</li>
-                        <li>Для искусственной травы (AG)</li>
-                    </ul>
-                </li>
-            </ul>
+        <!-- СЮДА JS БУДЕТ ВСТАВЛЯТЬ КАРТОЧКИ -->
+        <div id="products-container" class="row"></div>
 
-            <h3 id="adidas" style="margin-top: 30px;">Adidas</h3>
-            <!-- Пункт 7: Нумерованный список -->
-            <ol>
-                <li>Adidas Predator Elite</li>
-                <li>Adidas Copa Mundial</li>
-                <li>
-                    Adidas X Crazyfast
-                    <!-- Пункт 7: Вложенный нумерованный список -->
-                    <ol type="a">
-                        <li>Версия со шнурками</li>
-                        <li>Версия без шнурков</li>
-                    </ol>
-                </li>
-            </ol>
-        </div>
-
-        <!-- Пункт 6: Ссылка "к началу" -->
-        <a href="#top" style="display: block; text-align: center; margin-top: 30px; font-weight: bold;">Наверх ▲</a>
-        
     </main>
 
-    <footer>
-        <p>&copy; 2025 Football Store. Все права защищены.</p>
+    <footer id="footer-anchor" class="text-center">
+        <p>&copy; 2025 Football Store.</p>
+        <a href="#" class="text-white">Наверх</a>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- СКРИПТ ДЛЯ ПУНКТА 5 (Генерация контента) -->
+    <script>
+        // Массив данных (имитация базы данных)
+        const products = [
+            { name: "Nike Mercurial", price: "15 000 ₽", img: "mercurial-small.jpg", brand: "Nike" },
+            { name: "Adidas Predator", price: "14 500 ₽", img: "predator-small.jpg", brand: "Adidas" },
+            { name: "Puma Future", price: "12 000 ₽", img: "https://placehold.co/300x200?text=Puma", brand: "Puma" },
+            { name: "Nike Phantom", price: "16 000 ₽", img: "https://placehold.co/300x200?text=Phantom", brand: "Nike" },
+            { name: "Adidas X", price: "13 500 ₽", img: "https://placehold.co/300x200?text=Adidas+X", brand: "Adidas" },
+            { name: "Mizuno Morelia", price: "18 000 ₽", img: "https://placehold.co/300x200?text=Mizuno", brand: "Mizuno" },
+            // Повторяем для количества (нужно 6-12 блоков)
+            { name: "Nike Tiempo", price: "11 000 ₽", img: "https://placehold.co/300x200?text=Tiempo", brand: "Nike" },
+            { name: "Adidas Copa", price: "10 500 ₽", img: "https://placehold.co/300x200?text=Copa", brand: "Adidas" }
+        ];
+
+        const container = document.getElementById('products-container');
+
+        // Цикл генерации
+        products.forEach(product => {
+            // Создаем HTML строку для карточки Bootstrap
+            const cardHTML = `
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="${product.img}" class="card-img-top" alt="${product.name}" onerror="this.src='https://placehold.co/300x200?text=No+Image'">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text text-muted">${product.brand}</p>
+                            <p class="card-text fw-bold text-primary">${product.price}</p>
+                            <a href="order.html" class="btn btn-success w-100">Купить</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            // Добавляем в контейнер
+            container.innerHTML += cardHTML;
+        });
+    </script>
 </body>
 </html>

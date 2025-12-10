@@ -4,88 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Store - Сравнение</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>FOOTBALL STORE</h1>
-    </header>
-
-    <!-- 
-      НАВИГАЦИЯ
-      - "class=active" теперь стоит на "Сравнение"
-    -->
-    <nav>
-        <a href="index.html" class="logo-link">⚽</a>
-        <a href="index.html">Главная</a>
-        <a href="products.html">Продукция (Списки)</a>
-        <a href="comparison.html" class="active">Сравнение (Таблица)</a>
-        <a href="order.html">Заказ (Формы)</a>
-        <a href="https://www.adidas.com" target="_blank" class="external-link">Adidas.com</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">⚽ Football Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Каталог (JS)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="comparison.html">Сравнение</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Заказ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.adidas.com" target="_blank">Adidas.com</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <h2>Сравнительная таблица моделей</h2>
-        
-        <!-- 
-          Пункт 10: Таблица
-          - Изображение на заднем фоне (через style.css)
-        -->
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Модель</th>
-                    <!-- Пункт 10: Изображение в ячейке -->
-                    <th>Логотип</th>
-                    <!-- Пункт 9: Миниатюрная графическая гиперссылка -->
-                    <th>Вид (Нажми для увеличения)</th>
-                    <th>Особенности</th>
-                    <!-- Пункт 10: Гиперссылки -->
-                    <th>Ссылка</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Adidas Predator Elite</td>
-                    <td><img class="cell-image" src="adi.png" alt="Adidas"></td>
-                    <td>
-                        <!-- Пункт 9: Миниатюра (100px) -->
-                        <a 
-                            href="adidas-logo.png" 
-                            target="_blank" 
-                            class="thumbnail"
-                        >
-                            <img src="adidas-logo.png" alt="Predator Thumbnail">
-                        </a>
-                    </td>
-                    <td>Контроль, точность, резиновые шипы</td>
-                    <td><a href="order.html" class="buy-link">Заказать</a></td>
-                </tr>
-                <tr>
-                    <td>Nike Mercurial Superfly</td>
-                    <td><img class="cell-image" src="nike.png" alt="Nike"></td>
-                    <td>
-                        <!-- Пункт 9: Миниатюра (100px) -->
-                        <a 
-                            href="nike-logo.png" 
-                            target="_blank" 
-                            class="thumbnail"
-                        >
-                            <img src="nike-logo.png" alt="Mercurial Thumbnail">
-                        </a>
-                    </td>
-                    <td>Скорость, легкий вес, фиксация голеностопа</td>
-                    <td><a href="order.html" class="buy-link">Заказать</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <main class="container mt-4">
+        <h2 class="mb-4">Сравнение моделей</h2>
 
+        <div class="table-responsive">
+            <!-- Таблица Bootstrap (Пункт 10) -->
+            <table class="table table-striped table-hover table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Модель</th>
+                        <th>Лого</th>
+                        <th>Вид (П.9)</th>
+                        <th>Особенности</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Adidas Predator</td>
+                        <td><img src="adidas-logo.png" width="50" alt="Adidas" onerror="this.src='https://placehold.co/50'"></td>
+                        <td>
+                            <!-- Миниатюра (Пункт 9) -->
+                            <a href="predator-big.jpg" target="_blank">
+                                <img src="predator-small.jpg" width="100" class="img-thumbnail" alt="Thumb" onerror="this.src='https://placehold.co/100'">
+                            </a>
+                        </td>
+                        <td>Контроль мяча</td>
+                        <td><a href="order.html" class="btn btn-sm btn-primary">Заказать</a></td>
+                    </tr>
+                    <tr>
+                        <td>Nike Mercurial</td>
+                        <td><img src="nike-logo.png" width="50" alt="Nike" onerror="this.src='https://placehold.co/50'"></td>
+                        <td>
+                            <a href="mercurial-big.jpg" target="_blank">
+                                <img src="mercurial-small.jpg" width="100" class="img-thumbnail" alt="Thumb" onerror="this.src='https://placehold.co/100'">
+                            </a>
+                        </td>
+                        <td>Скорость</td>
+                        <td><a href="order.html" class="btn btn-sm btn-primary">Заказать</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Football Store. Все права защищены.</p>
+    <footer class="text-center">
+        <p>&copy; 2025 Football Store.</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

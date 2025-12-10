@@ -4,114 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Store - Заказ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>FOOTBALL STORE</h1>
-    </header>
-
-    <!-- 
-      НАВИГАЦИЯ
-      - "class=active" теперь стоит на "Заказ"
-    -->
-    <nav>
-        <a href="index.html" class="logo-link">⚽</a>
-        <a href="index.html">Главная</a>
-        <a href="products.html">Продукция (Списки)</a>
-        <a href="comparison.html">Сравнение (Таблица)</a>
-        <a href="order.html" class="active">Заказ (Формы)</a>
-        <a href="https://www.adidas.com" target="_blank" class="external-link">Adidas.com</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">⚽ Football Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Каталог (JS)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Сравнение</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="order.html">Заказ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.adidas.com" target="_blank">Adidas.com</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <h2>Оформление заказа</h2>
+    <main class="container mt-4">
+        <h2 class="mb-4">Оформление заказа (Пункт 6)</h2>
 
-        <section class="form-section">
-            <h3>Форма 1: Ваши контактные данные (Пункт 11)</h3>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLScv7MA8QMCKdGvXsGoeDrTXvJAwlToMQgjLtUiK5hWm9JJnAw/formResponse" method="POST" target="_blank">
-                <div>
-                    <label for="familiya">Фамилия:</label>
-                    <input type="text" id="familiya" name="entry.386149359" required> 
+        <div class="card p-4 shadow-sm">
+            <!-- 
+                ФОРМА (Пункт 6):
+                1. Вставь свой action="..." от Google Form.
+                2. Вставь свои name="entry.XXX"
+            -->
+            <form action="YOUR_GOOGLE_FORM_ACTION_HERE" method="POST" target="_blank">
+                
+                <!-- Тип TEXT -->
+                <div class="mb-3">
+                    <label class="form-label">Ваше Имя:</label>
+                    <input type="text" name="entry.YOUR_ID_NAME" class="form-control" required placeholder="Иван Иванов">
                 </div>
-                <div>
-                    <label for="imya">Имя:</label>
-                    <input type="text" id="imya" name="entry.206504612" required> 
+
+                <!-- Тип NUMBER (Непустое значение по умолчанию) -->
+                <div class="mb-3">
+                    <label class="form-label">Количество пар:</label>
+                    <input type="number" name="entry.YOUR_ID_COUNT" class="form-control" value="1" min="1">
                 </div>
-                <div>
-                    <label for="group">Группа:</label>
-                    <input type="text" id="group" name="entry.186503631"> 
+
+                <!-- Тип RADIO -->
+                <div class="mb-3">
+                    <label class="form-label d-block">Способ доставки:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="entry.YOUR_ID_DELIVERY" value="Самовывоз" checked>
+                        <label class="form-check-label">Самовывоз</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="entry.YOUR_ID_DELIVERY" value="Курьер">
+                        <label class="form-check-label">Курьер</label>
+                    </div>
                 </div>
-                <div>
-                    <label for="phone">Мобильный телефон:</label>
-                    <input type="tel" id="phone" name="entry.1168162211"> 
-                </div>
-                <div>
-                    <label for="email">Электронка:</label>
-                    <input type="email" id="email" name="entry.1852732843" required> 
-                </div>
-                <div>
-                    <label for="send_date">Дата отправки:</label>
-                    <input type="date" id="send_date" name="entry.2063353463" required> 
-                </div>
-                <button type="submit">Отправить контактные данные</button>
+
+                <!-- Кнопка -->
+                <button type="submit" class="btn btn-success btn-lg w-100">Отправить заказ</button>
             </form>
-        </section>
-        <section class="form-section">
-            <h3>Форма 2: Детали заказа (Пункт 12)</h3>
-            <form action="YOUR_SECOND_FORM_ACTION_LINK_HERE" method="POST" target="_blank">
-                
-                <!-- hidden (скрытое поле) -->
-                <input type="hidden" name="entry.2000001" value="order-boots-v2"> 
-                
-                <!-- text -->
-                <div>
-                    <label for="full_name">Полное имя (на карте):</label>
-                    <input type="text" id="full_name" name="entry.2000002">
-                
-                <!-- number (со значением по-умолчанию) -->
-                <div>
-                    <label for="size">Размер (EU):</label>
-                    <input type="number" id="size" name="entry.2000003" value="42" min="36" max="48"> 
-                </div>
-                
-                <div class="radio-group">
-
-                    <label><input type="radio" name="entry.2000004" value="FG" checked> Firm Ground (Трава)</label> <!-- ЗАМЕНИТЬ entry.2000004 -->
-                    <label><input type="radio" name="entry.2000004" value="AG"> Artificial Grass (Искусств.)</label>
-                    <label><input type="radio" name="entry.2000004" value="SG"> Soft Ground (Грязь)</label>
-                </div>
-                
-                <!-- checkbox -->
-                <div class="checkbox-group">
-                    <label>Дополнительно:</label>
-
-                    <label><input type="checkbox" name="entry.2000005" value="yes"> Запасные шнурки</label> <!-- ЗАМЕНИТЬ entry.2000005 -->
-                    <label><input type="checkbox" name="entry.2000006" value="yes"> Сумка для бутс</label> <!-- ЗАМЕНИТЬ entry.2000006 -->
-                </div>
-                
-                <!-- date -->
-                <div>
-                    <label for="delivery_date">Желаемая дата доставки:</label>
-                    <input type="date" id="delivery_date" name="entry.2000007"> <!-- ЗАМЕНИТЬ entry.2000007 -->
-                </div>
-                
-                <!-- password -->
-                <div>
-                    <label for="promo_code">Промо-код:</label>
-                    <input type="password" id="promo_code" name="entry.2000008"> <!-- ЗАМЕНИТЬ entry.2000008 -->
-                </div>
-                
-                <button type="submit">Оформить заказ</button>
-            </form>
-        </section>
-
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Football Store. Все права защищены.</p>
+    <footer class="text-center">
+        <p>&copy; 2025 Football Store.</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
